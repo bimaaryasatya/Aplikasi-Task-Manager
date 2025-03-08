@@ -157,6 +157,10 @@ public class AplikasiTaskManager extends javax.swing.JFrame {
                 if (row != -1) {
             DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
             m.removeRow(row);
+                    
+                for (int i = row; i < m.getRowCount(); i++) {
+                    m.setValueAt(i + 1, i, 0);
+                }
         } else {
             JOptionPane.showMessageDialog(this, "Anda belum memilih tugas");
         }
